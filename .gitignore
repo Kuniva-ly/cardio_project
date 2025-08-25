@@ -1,47 +1,59 @@
-# --- Python / bytecode / builds ---
+# --- Python / Bytecode
 __pycache__/
 *.py[cod]
-*.pyo
 *.pyd
 *.so
-*.dylib
-*.egg-info/
-dist/
-build/
 
-# --- Environnements / secrets ---
+# --- Environnements & secrets
 .venv/
 venv/
 .env
+.env.*
 *.env
 
-# --- Logs / caches / tests ---
-*.log
+# --- Build / packaging
+build/
+dist/
+*.egg-info/
+
+# --- Notebooks
+.ipynb_checkpoints/
+
+# --- Éditeurs / IDE
+.vscode/
+.idea/
+
+# --- OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Tests / Typing / Coverage
 .pytest_cache/
 .coverage
 htmlcov/
 .mypy_cache/
+.pyright*
 
-# --- Notebooks / checkpoints ---
-.ipynb_checkpoints/
-*.ipynb
+# --- Logs
+logs/
+*.log
 
-# --- OS / IDE ---
-.DS_Store
-Thumbs.db
-desktop.ini
-.vscode/
-.idea/
-*.code-workspace
-~$*  # fichiers temporaires Office/OneDrive
-
-# --- Données : ignorer tout, sauf le clean utilisé par le projet ---
+# --- Données (on ignore tout par défaut)
 data/**
-!data/heart_clean.csv
+!data/README.md
+!data/heart_clean.csv     # <-- on garde le CSV clean
+# !data/heart.csv         # <-- décommente si tu veux AUSSI garder le brut
 
-# --- Modèles : ignorer tout, sauf artefacts publiables ---
+# --- Modèles (ignorés par défaut)
 models/**
-!models/metrics.json
-!models/heart_pipeline.joblib
-!models/heart_pipeline.pkl
+!models/README.md
+# Si tu veux versionner les artefacts, utilise Git LFS plutôt que le repo normal.
 
+# --- Docker (overrides locaux)
+docker-compose.override.yml
+*.local.yml
+
+# --- Fichiers temporaires courants
+*.tmp
+~$*
