@@ -1,0 +1,47 @@
+# --- Python / bytecode / builds ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.egg-info/
+dist/
+build/
+
+# --- Environnements / secrets ---
+.venv/
+venv/
+.env
+*.env
+
+# --- Logs / caches / tests ---
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# --- Notebooks / checkpoints ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.code-workspace
+~$*  # fichiers temporaires Office/OneDrive
+
+# --- Données : ignorer tout, sauf le clean utilisé par le projet ---
+data/**
+!data/heart_clean.csv
+
+# --- Modèles : ignorer tout, sauf artefacts publiables ---
+models/**
+!models/metrics.json
+!models/heart_pipeline.joblib
+!models/heart_pipeline.pkl
+
