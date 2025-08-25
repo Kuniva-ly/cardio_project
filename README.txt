@@ -26,17 +26,17 @@ cardio_project/
 │   ├── heart_pipeline.pkl
 │   └── metrics.json
 │
-├── 01_ingestion.py          # Nettoyage et validation des données
+├── ingestion.py          # Nettoyage et validation des données
 ├── preprocess.py            # Préprocesseur scikit-learn (imputer, scaler, OHE)
-├── 03_train.py              # Entraînement + sauvegarde du pipeline
-├── 04_api.py                # API FastAPI pour servir le modèle
+├── train.py              # Entraînement + sauvegarde du pipeline
+├── api.py                # API FastAPI pour servir le modèle
 └── README.txt               # Documentation du projet
 
 -----------------------------------------------------------
 Installation
 -----------------------------------------------------------
 1. Cloner le projet
-   git clone https://github.com/<ton-repo>/cardio_project.git
+   git clone git@github.com:Kuniva-ly/cardio_project.git
    cd cardio_project
 
 2. Créer un environnement virtuel
@@ -51,16 +51,16 @@ Pipeline d’exécution
 -----------------------------------------------------------
 
 1) Ingestion & nettoyage
-   python 01_ingestion.py
+   python ingestion.py
    --> génère data/heart_clean.csv
 
 2) Entraînement du modèle
-   python 03_train.py
+   python train.py
    --> génère les artefacts dans models/ :
        - heart_pipeline.joblib
        - heart_pipeline.pkl
        - metrics.json
 
 3) Lancer l’API FastAPI
-   uvicorn 04_api:app --reload --port 8000
+   uvicorn api:app --reload --port 8000
    --> documentation interactive : http://127.0.0.1:8000/docs
