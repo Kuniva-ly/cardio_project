@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  cardio_api:
+    build: . # construit l’image avec le Dockerfile
+    ports:
+      - "8000:8000" # mappe le port hôte 8000 -> conteneur 8000
+    volumes:
+      - ./models:/app/models:ro # monte le dossier models en lecture seule
+      - ./data:/app/data:ro # monte le dossier data en lecture seule
+    restart: unless-stopped # relance auto sauf arrêt manuel
