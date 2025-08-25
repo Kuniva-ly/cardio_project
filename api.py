@@ -65,4 +65,4 @@ def predict(features: PatientFeatures):
     return {"probability": proba, "prediction": label}
 
 
-# Lancement local: uvicorn 04_api:app --reload --port 8000
+# Lancement local: uvicorn api:app --reload --port 8000

@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 # Copier les scripts + dossiers (data/models seront montés en volume en dev)
-COPY 01_ingestion.py 02_preprocess.py 03_train.py 04_api.py ./
+COPY ingestion.py preprocess.py train.py api.py ./
 COPY data ./data
 COPY models ./models
 
